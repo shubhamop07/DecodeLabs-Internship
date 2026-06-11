@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse — Interactive Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ░░ NAVBAR ░░ -->
+  <header class="navbar" id="js-navbar">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="logo__dot"></span>
+        Pulse
+      </a>
+      <nav class="nav__links" id="js-nav-links" role="navigation" aria-label="Main navigation">
+        <a href="#stats">Stats</a>
+        <a href="#tasks">Tasks</a>
+        <a href="#notes">Notes</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__controls">
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle js-theme-toggle" id="js-theme-btn" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-toggle__track">
+            <span class="theme-toggle__thumb">
+              <svg class="icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <svg class="icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </span>
+          </span>
+        </button>
+        <!-- Hamburger -->
+        <button class="hamburger js-hamburger" id="js-hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ░░ MOBILE MENU ░░ -->
+  <div class="mobile-menu" id="js-mobile-menu" aria-hidden="true">
+    <a href="#stats" class="js-menu-link">Stats</a>
+    <a href="#tasks" class="js-menu-link">Tasks</a>
+    <a href="#notes" class="js-menu-link">Notes</a>
+    <a href="#faq" class="js-menu-link">FAQ</a>
+  </div>
+
+  <main>
+
+    <!-- ░░ HERO ░░ -->
+    <section class="hero">
+      <div class="hero__inner">
+        <p class="hero__eyebrow">Your personal command center</p>
+        <h1 class="hero__heading">
+          Everything<br/>
+          <span class="hero__accent js-typewriter" id="js-typewriter" aria-live="polite"></span>
+          <span class="cursor" aria-hidden="true">|</span>
+        </h1>
+        <p class="hero__sub">Built with pure JavaScript DOM manipulation — buttons, toggles, live updates, and real interactivity.</p>
+        <div class="hero__actions">
+          <a href="#tasks" class="btn btn--primary js-ripple">Get Started</a>
+          <a href="#faq" class="btn btn--ghost js-ripple">Learn More</a>
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="orbit">
+          <div class="orbit__ring orbit__ring--1"></div>
+          <div class="orbit__ring orbit__ring--2"></div>
+          <div class="orbit__core">
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="30" cy="30" r="8" fill="currentColor"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ STATS ░░ -->
+    <section class="section stats-section" id="stats">
+      <div class="section__inner">
+        <p class="section__label">Live counters</p>
+        <h2 class="section__heading">Numbers that move</h2>
+        <div class="stats-grid">
+          <div class="stat-card js-ripple" data-target="2847" data-suffix="">
+            <span class="stat__value js-counter" id="counter-0">0</span>
+            <span class="stat__label">Lines of code</span>
+            <div class="stat__bar"><div class="stat__fill" style="--fill: 92%"></div></div>
+          </div>
+          <div class="stat-card js-ripple" data-target="143" data-suffix="">
+            <span class="stat__value js-counter" id="counter-1">0</span>
+            <span class="stat__label">Commits this month</span>
+            <div class="stat__bar"><div class="stat__fill" style="--fill: 68%"></div></div>
+          </div>
+          <div class="stat-card js-ripple" data-target="99" data-suffix="%">
+            <span class="stat__value js-counter" id="counter-2">0</span>
+            <span class="stat__label">Uptime score</span>
+            <div class="stat__bar"><div class="stat__fill is-green" style="--fill: 99%"></div></div>
+          </div>
+          <div class="stat-card js-ripple" data-target="12" data-suffix="">
+            <span class="stat__value js-counter" id="counter-3">0</span>
+            <span class="stat__label">Active projects</span>
+            <div class="stat__bar"><div class="stat__fill is-coral" style="--fill: 48%"></div></div>
+          </div>
+        </div>
+        <div class="stats__cta">
+          <button class="btn btn--outline js-ripple" id="js-recount-btn">↺ Recount</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ TABS ░░ -->
+    <section class="section tabs-section" id="tasks">
+      <div class="section__inner">
+        <p class="section__label">Task manager</p>
+        <h2 class="section__heading">Stay on track</h2>
+
+        <!-- Tab Nav -->
+        <div class="tabs" role="tablist" aria-label="Task categories">
+          <button class="tab is-active js-tab" role="tab" aria-selected="true" aria-controls="tab-panel-all" id="tab-all" data-tab="all">All</button>
+          <button class="tab js-tab" role="tab" aria-selected="false" aria-controls="tab-panel-active" id="tab-active" data-tab="active">Active</button>
+          <button class="tab js-tab" role="tab" aria-selected="false" aria-controls="tab-panel-done" id="tab-done" data-tab="done">Done</button>
+          <div class="tab__indicator" id="js-tab-indicator" aria-hidden="true"></div>
+        </div>
+
+        <!-- Task Input -->
+        <div class="task-input-row">
+          <input
+            type="text"
+            class="task-input js-task-input"
+            id="js-task-input"
+            placeholder="Add a new task..."
+            maxlength="80"
+            aria-label="New task"
+          />
+          <button class="btn btn--primary js-ripple" id="js-add-task-btn" aria-label="Add task">Add</button>
+        </div>
+
+        <!-- Tab Panels -->
+        <div class="tab-panel is-active" role="tabpanel" id="tab-panel-all" aria-labelledby="tab-all">
+          <ul class="task-list" id="js-task-list-all" aria-label="All tasks"></ul>
+          <p class="empty-state" id="js-empty-all" aria-live="polite">No tasks yet — add one above.</p>
+        </div>
+        <div class="tab-panel" role="tabpanel" id="tab-panel-active" aria-labelledby="tab-active" hidden>
+          <ul class="task-list" id="js-task-list-active" aria-label="Active tasks"></ul>
+          <p class="empty-state" id="js-empty-active" aria-live="polite">Nothing active right now.</p>
+        </div>
+        <div class="tab-panel" role="tabpanel" id="tab-panel-done" aria-labelledby="tab-done" hidden>
+          <ul class="task-list" id="js-task-list-done" aria-label="Completed tasks"></ul>
+          <p class="empty-state" id="js-empty-done" aria-live="polite">No completed tasks yet.</p>
+        </div>
+
+        <div class="task-footer">
+          <span class="task-count" id="js-task-count" aria-live="polite">0 tasks</span>
+          <button class="btn btn--ghost btn--sm js-ripple" id="js-clear-done">Clear done</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ NOTES / CHARACTER COUNTER ░░ -->
+    <section class="section notes-section" id="notes">
+      <div class="section__inner notes-layout">
+        <div class="notes-text">
+          <p class="section__label">Live feedback</p>
+          <h2 class="section__heading">Write your thoughts</h2>
+          <p class="notes-desc">Every keystroke updates the DOM in real time — a live character counter, word count, and reading time estimate.</p>
+          <div class="notes-meta" id="js-notes-meta">
+            <div class="meta-pill">
+              <span class="meta-pill__value" id="js-char-count">0</span>
+              <span class="meta-pill__label">chars</span>
+            </div>
+            <div class="meta-pill">
+              <span class="meta-pill__value" id="js-word-count">0</span>
+              <span class="meta-pill__label">words</span>
+            </div>
+            <div class="meta-pill">
+              <span class="meta-pill__value" id="js-read-time">0s</span>
+              <span class="meta-pill__label">read</span>
+            </div>
+          </div>
+        </div>
+        <div class="notes-editor">
+          <div class="editor-chrome">
+            <div class="editor-chrome__dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <textarea
+              class="editor-area js-notes-area"
+              id="js-notes-area"
+              maxlength="500"
+              placeholder="Start typing anything…"
+              aria-label="Notes editor"
+              spellcheck="false"
+            ></textarea>
+            <div class="editor-footer">
+              <div class="char-progress-wrap" aria-hidden="true">
+                <svg class="char-progress" viewBox="0 0 36 36">
+                  <circle class="char-progress__bg" cx="18" cy="18" r="15.9"/>
+                  <circle class="char-progress__fill" id="js-char-ring" cx="18" cy="18" r="15.9" stroke-dasharray="0 100"/>
+                </svg>
+                <span class="char-progress__text" id="js-char-remain">500</span>
+              </div>
+              <button class="btn btn--ghost btn--sm js-ripple" id="js-clear-notes">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ COLOR MIXER (bonus interactive widget) ░░ -->
+    <section class="section mixer-section">
+      <div class="section__inner">
+        <p class="section__label">Dynamic DOM update</p>
+        <h2 class="section__heading">Color your world</h2>
+        <div class="mixer-layout">
+          <div class="mixer-controls">
+            <div class="slider-group">
+              <label class="slider-label" for="slider-r">Red <span class="slider-val" id="val-r">128</span></label>
+              <input type="range" class="color-slider js-color-slider" id="slider-r" data-channel="r" min="0" max="255" value="128" />
+            </div>
+            <div class="slider-group">
+              <label class="slider-label" for="slider-g">Green <span class="slider-val" id="val-g">90</span></label>
+              <input type="range" class="color-slider js-color-slider" id="slider-g" data-channel="g" min="0" max="255" value="90" />
+            </div>
+            <div class="slider-group">
+              <label class="slider-label" for="slider-b">Blue <span class="slider-val" id="val-b">240</span></label>
+              <input type="range" class="color-slider js-color-slider" id="slider-b" data-channel="b" min="0" max="255" value="240" />
+            </div>
+            <div class="mixer-output">
+              <code class="hex-output" id="js-hex-output">#805af0</code>
+              <button class="btn btn--outline btn--sm js-ripple" id="js-copy-hex">Copy</button>
+            </div>
+          </div>
+          <div class="color-preview" id="js-color-preview" aria-live="polite" aria-label="Color preview">
+            <span class="preview-label" id="js-preview-label">Feeling electric</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ FAQ ACCORDION ░░ -->
+    <section class="section faq-section" id="faq">
+      <div class="section__inner faq-inner">
+        <div class="faq-header">
+          <p class="section__label">Knowledge base</p>
+          <h2 class="section__heading">Common questions</h2>
+          <button class="btn btn--ghost btn--sm js-ripple" id="js-expand-all">Expand all</button>
+        </div>
+        <div class="accordion" id="js-accordion" role="list">
+
+          <div class="accordion__item js-accordion-item" role="listitem">
+            <button class="accordion__trigger js-accordion-trigger" aria-expanded="false" aria-controls="faq-1">
+              <span>What is DOM manipulation?</span>
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__body" id="faq-1" hidden>
+              <p>The DOM (Document Object Model) is the browser's live map of your HTML. JavaScript can reach into it, grab elements, change their text, add/remove classes, create new nodes, or delete existing ones — all without reloading the page. It's the core superpower of frontend development.</p>
+            </div>
+          </div>
+
+          <div class="accordion__item js-accordion-item" role="listitem">
+            <button class="accordion__trigger js-accordion-trigger" aria-expanded="false" aria-controls="faq-2">
+              <span>What's the difference between innerHTML and textContent?</span>
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__body" id="faq-2" hidden>
+              <p><code>textContent</code> sets plain text and is safe from XSS attacks — it treats everything as a literal string. <code>innerHTML</code> parses raw HTML, which is powerful but dangerous if you're injecting user data. Always default to <code>textContent</code> for data you don't control.</p>
+            </div>
+          </div>
+
+          <div class="accordion__item js-accordion-item" role="listitem">
+            <button class="accordion__trigger js-accordion-trigger" aria-expanded="false" aria-controls="faq-3">
+              <span>When should I use const vs let?</span>
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__body" id="faq-3" hidden>
+              <p>Use <code>const</code> by default — it signals that this binding won't be reassigned, which makes your code easier to reason about. Switch to <code>let</code> only when you know the value will be updated (counters, loop variables, toggles). Avoid <code>var</code> entirely; it's function-scoped and prone to bugs from hoisting.</p>
+            </div>
+          </div>
+
+          <div class="accordion__item js-accordion-item" role="listitem">
+            <button class="accordion__trigger js-accordion-trigger" aria-expanded="false" aria-controls="faq-4">
+              <span>Why use classList instead of style directly?</span>
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__body" id="faq-4" hidden>
+              <p>Separating concerns keeps your code clean. JavaScript handles <em>behavior</em> (toggling a class), while CSS handles <em>visuals</em> (what that class looks like, including transitions). When you inline styles from JS, you lose the ability to animate with CSS transitions and end up with logic spread across two places.</p>
+            </div>
+          </div>
+
+          <div class="accordion__item js-accordion-item" role="listitem">
+            <button class="accordion__trigger js-accordion-trigger" aria-expanded="false" aria-controls="faq-5">
+              <span>What's event delegation and why does it matter?</span>
+              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__body" id="faq-5" hidden>
+              <p>Instead of attaching a listener to every child element, you attach one listener to a parent and use <code>event.target</code> to figure out which child was clicked. This is far more efficient — it works for elements added dynamically, and reduces memory usage. Essential for things like todo lists or comment threads.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__brand">Pulse</span>
+      <span class="footer__copy">Built for DecodeLabs · Project 3</span>
+      <button class="scroll-top js-scroll-top js-ripple" id="js-scroll-top" aria-label="Back to top">↑</button>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="js-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

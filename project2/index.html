@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechBlog — Explore the World of Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+  ============================================ -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <a href="#" class="nav-logo">Tech<span>.</span>Blog</a>
+
+        <!-- Hamburger (mobile only) -->
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Nav links -->
+        <ul class="nav-menu" id="navMenu" role="list">
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#topics">Topics</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+
+        <a href="#newsletter" class="btn btn--primary nav-cta">Subscribe</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============================================
+         HERO
+    ============================================ -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-inner">
+
+          <div class="hero-content">
+            <div class="hero-eyebrow">
+              <div class="dot" aria-hidden="true"></div>
+              <span>Now publishing — Batch 2026</span>
+            </div>
+
+            <h1 class="hero-title" id="hero-heading">
+              Ideas that <em>shape</em> the digital world.
+            </h1>
+
+            <p class="hero-desc">
+              Deep dives into web development, design systems, and the ever-evolving landscape of technology — written by developers, for developers.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#articles" class="btn btn--primary">Read Articles ↓</a>
+              <a href="#topics" class="btn btn--ghost">Browse Topics</a>
+            </div>
+          </div>
+
+          <!-- Hero visual: animated code block -->
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-visual-inner">
+              <div class="hero-code-block">
+                <div class="line"><span class="ln">1</span><span class="c-cm">/* mobile-first base */</span></div>
+                <div class="line"><span class="ln">2</span><span class="c-kw">.container</span> <span class="c-val">{</span></div>
+                <div class="line"><span class="ln">3</span>&nbsp;&nbsp;<span class="c-prop">width</span>: <span class="c-num">90%</span>;</div>
+                <div class="line"><span class="ln">4</span>&nbsp;&nbsp;<span class="c-prop">max-width</span>: <span class="c-num">1200px</span>;</div>
+                <div class="line"><span class="ln">5</span><span class="c-val">}</span></div>
+                <div class="line"><span class="ln">6</span></div>
+                <div class="line"><span class="ln">7</span><span class="c-mq">@media</span> <span class="c-val">(min-width: 768px)</span> <span class="c-val">{</span></div>
+                <div class="line"><span class="ln">8</span>&nbsp;&nbsp;<span class="c-kw">.grid</span> <span class="c-val">{</span></div>
+                <div class="line"><span class="ln">9</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-prop">grid-template-columns</span>:</div>
+                <div class="line"><span class="ln">10</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-val">repeat(3, 1fr)</span>;</div>
+                <div class="line"><span class="ln">11</span>&nbsp;&nbsp;<span class="c-val">}</span></div>
+                <div class="line"><span class="ln">12</span><span class="c-val">}</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats row -->
+          <div class="hero-stats" role="region" aria-label="Publication stats">
+            <div class="stat">
+              <span class="stat-num">240+</span>
+              <span class="stat-label">Articles</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">18k</span>
+              <span class="stat-label">Readers</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">32</span>
+              <span class="stat-label">Authors</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">6</span>
+              <span class="stat-label">Topics</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FEATURED + SIDEBAR WRAP
+    ============================================ -->
+    <section class="section" id="featured" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="content-wrap">
+
+          <!-- Main content column -->
+          <div class="content-main">
+
+            <div class="section-header">
+              <h2 class="section-title" id="featured-heading">Featured</h2>
+              <a href="#articles" class="section-link">All articles →</a>
+            </div>
+
+            <!-- Featured Card -->
+            <article class="featured-card reveal" tabindex="0">
+              <div class="featured-img">
+                <div class="featured-img-inner">
+                  <div class="art-circles" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <p class="art-label" aria-hidden="true">CSS</p>
+                </div>
+                <div class="featured-badge">
+                  <span class="tag tag--blue">Editor's Pick</span>
+                </div>
+              </div>
+
+              <div class="featured-body">
+                <div class="card-tags">
+                  <span class="tag tag--blue">CSS</span>
+                  <span class="tag tag--green">Responsive</span>
+                </div>
+                <h2>The Art of Fluidity: Building Responsive Architectures from the Content Out</h2>
+                <p>Stop designing for devices. Start designing for your content. A deep-dive into mobile-first strategy, fluid units, CSS Grid, and why breakpoints should be bridges — not fences.</p>
+                <div class="article-meta">
+                  <div class="avatar" aria-hidden="true">AK</div>
+                  <div class="meta-info">
+                    <span class="meta-name">Aryan Kumar</span>
+                    <span class="meta-date">June 3, 2026</span>
+                  </div>
+                  <span class="read-time">8 min read</span>
+                </div>
+                <a href="#" class="btn btn--primary" style="margin-top: 0.5rem; align-self: flex-start;">Read Article →</a>
+              </div>
+            </article>
+
+          </div><!-- /content-main -->
+
+          <!-- Sidebar -->
+          <aside class="content-sidebar" aria-label="Sidebar">
+
+            <!-- Trending -->
+            <div class="sidebar-widget reveal">
+              <p class="widget-title">Trending Now</p>
+              <ul class="trending-list" role="list">
+                <li class="trending-item">
+                  <span class="trending-num" aria-hidden="true">01</span>
+                  <div class="trending-info">
+                    <h4>CSS Container Queries Explained</h4>
+                    <span>3.2k views · 5 min</span>
+                  </div>
+                </li>
+                <li class="trending-item">
+                  <span class="trending-num" aria-hidden="true">02</span>
+                  <div class="trending-info">
+                    <h4>Mastering the CSS clamp() Function</h4>
+                    <span>2.8k views · 6 min</span>
+                  </div>
+                </li>
+                <li class="trending-item">
+                  <span class="trending-num" aria-hidden="true">03</span>
+                  <div class="trending-info">
+                    <h4>When to Use Grid vs Flexbox</h4>
+                    <span>2.1k views · 4 min</span>
+                  </div>
+                </li>
+                <li class="trending-item">
+                  <span class="trending-num" aria-hidden="true">04</span>
+                  <div class="trending-info">
+                    <h4>The Popover API: No JS Navigation</h4>
+                    <span>1.7k views · 3 min</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Topics filter -->
+            <div class="sidebar-widget reveal" id="newsletter">
+              <p class="widget-title">Browse Topics</p>
+              <div class="topics-wrap" role="list">
+                <button class="topic-btn" role="listitem">CSS</button>
+                <button class="topic-btn" role="listitem">HTML</button>
+                <button class="topic-btn" role="listitem">JavaScript</button>
+                <button class="topic-btn" role="listitem">React</button>
+                <button class="topic-btn" role="listitem">Design</button>
+                <button class="topic-btn" role="listitem">A11y</button>
+                <button class="topic-btn" role="listitem">Performance</button>
+                <button class="topic-btn" role="listitem">Tools</button>
+              </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="sidebar-widget reveal">
+              <p class="widget-title">Newsletter</p>
+              <p style="font-size: 0.85rem; margin-bottom: 1rem;">Weekly articles on modern frontend, straight to your inbox. No spam.</p>
+              <div class="newsletter-form" role="form" aria-label="Newsletter signup">
+                <input type="email" class="nl-input" placeholder="your@email.com" aria-label="Email address" />
+                <button class="nl-submit" type="button">Subscribe →</button>
+              </div>
+            </div>
+
+          </aside><!-- /sidebar -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ARTICLES GRID
+    ============================================ -->
+    <section class="section" id="articles" aria-labelledby="articles-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="articles-heading">Latest Articles</h2>
+          <a href="#" class="section-link">View all →</a>
+        </div>
+
+        <div class="articles-grid">
+
+          <!-- Card 1 -->
+          <article class="article-card reveal">
+            <div class="card-thumb">
+              <div class="card-thumb-inner thumb-1">🎯</div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag--blue">CSS</span>
+              </div>
+              <h3>Mobile-First is a Mindset, Not a Technique</h3>
+              <p>How thinking small-first produces better, leaner, and more accessible designs across every screen size.</p>
+              <div class="card-footer">
+                <div class="card-author">
+                  <div class="avatar" style="width:26px;height:26px;font-size:0.6rem;" aria-hidden="true">SM</div>
+                  Sana M.
+                </div>
+                <a href="#" class="card-link" aria-label="Read article: Mobile-First is a Mindset">4 min →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="article-card reveal">
+            <div class="card-thumb">
+              <div class="card-thumb-inner thumb-2">⚡</div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag--red">JavaScript</span>
+              </div>
+              <h3>Defer, Lazy, Async: Loading Scripts the Right Way</h3>
+              <p>A practical guide to making your pages snappy by controlling exactly when your JavaScript loads and executes.</p>
+              <div class="card-footer">
+                <div class="card-author">
+                  <div class="avatar" style="width:26px;height:26px;font-size:0.6rem;background:linear-gradient(135deg,#ff6b6b,#c792ea)" aria-hidden="true">RV</div>
+                  Rohit V.
+                </div>
+                <a href="#" class="card-link" aria-label="Read article: Defer, Lazy, Async">6 min →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="article-card reveal">
+            <div class="card-thumb">
+              <div class="card-thumb-inner thumb-3">♿</div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag--green">A11y</span>
+              </div>
+              <h3>Accessibility is Non-Negotiable: Building for Every User</h3>
+              <p>Touch targets, zoom support, ARIA roles — a checklist every frontend developer needs before shipping.</p>
+              <div class="card-footer">
+                <div class="card-author">
+                  <div class="avatar" style="width:26px;height:26px;font-size:0.6rem;background:linear-gradient(135deg,#43d9ad,#5b8cff)" aria-hidden="true">PK</div>
+                  Priya K.
+                </div>
+                <a href="#" class="card-link" aria-label="Read article: Accessibility is Non-Negotiable">5 min →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="article-card reveal">
+            <div class="card-thumb">
+              <div class="card-thumb-inner thumb-1">🏗️</div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag--blue">CSS</span>
+              </div>
+              <h3>Grid + Flexbox: Architectural Harmony in CSS</h3>
+              <p>Use Grid to design the house. Use Flexbox to arrange the furniture. Here's exactly when each one wins.</p>
+              <div class="card-footer">
+                <div class="card-author">
+                  <div class="avatar" style="width:26px;height:26px;font-size:0.6rem;" aria-hidden="true">AK</div>
+                  Aryan K.
+                </div>
+                <a href="#" class="card-link" aria-label="Read article: Grid + Flexbox">7 min →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="article-card reveal">
+            <div class="card-thumb">
+              <div class="card-thumb-inner thumb-2">🔤</div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag--red">Design</span>
+              </div>
+              <h3>Fluid Typography with clamp(): Say Goodbye to Media Query Font Sizes</h3>
+              <p>One CSS property to rule them all. Learn how clamp() creates smooth, proportional type at every viewport width.</p>
+              <div class="card-footer">
+                <div class="card-author">
+                  <div class="avatar" style="width:26px;height:26px;font-size:0.6rem;background:linear-gradient(135deg,#ff6b6b,#c792ea)" aria-hidden="true">NJ</div>
+                  Neha J.
+                </div>
+                <a href="#" class="card-link" aria-label="Read article: Fluid Typography">5 min →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="article-card reveal">
+            <div class="card-thumb">
+              <div class="card-thumb-inner thumb-3">📱</div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag--green">HTML</span>
+              </div>
+              <h3>The Viewport Meta Tag: The One Line That Changes Everything</h3>
+              <p>Without this single HTML tag, your media queries are useless on mobile. Here's why — and how it works.</p>
+              <div class="card-footer">
+                <div class="card-author">
+                  <div class="avatar" style="width:26px;height:26px;font-size:0.6rem;background:linear-gradient(135deg,#43d9ad,#5b8cff)" aria-hidden="true">VS</div>
+                  Vikram S.
+                </div>
+                <a href="#" class="card-link" aria-label="Read article: Viewport Meta Tag">3 min →</a>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /articles-grid -->
+      </div>
+    </section>
+
+    <!-- ============================================
+         TOPICS STRIP
+    ============================================ -->
+    <section class="section" id="topics" aria-labelledby="topics-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="topics-heading">Browse by Topic</h2>
+        </div>
+        <div class="topics-grid" role="list">
+          <div class="topic-card reveal" role="listitem" tabindex="0">
+            <span class="topic-icon" aria-hidden="true">🎨</span>
+            <span class="topic-name">CSS</span>
+            <span class="topic-count">84 articles</span>
+          </div>
+          <div class="topic-card reveal" role="listitem" tabindex="0">
+            <span class="topic-icon" aria-hidden="true">📄</span>
+            <span class="topic-name">HTML</span>
+            <span class="topic-count">41 articles</span>
+          </div>
+          <div class="topic-card reveal" role="listitem" tabindex="0">
+            <span class="topic-icon" aria-hidden="true">⚡</span>
+            <span class="topic-name">JavaScript</span>
+            <span class="topic-count">63 articles</span>
+          </div>
+          <div class="topic-card reveal" role="listitem" tabindex="0">
+            <span class="topic-icon" aria-hidden="true">⚛️</span>
+            <span class="topic-name">React</span>
+            <span class="topic-count">29 articles</span>
+          </div>
+          <div class="topic-card reveal" role="listitem" tabindex="0">
+            <span class="topic-icon" aria-hidden="true">♿</span>
+            <span class="topic-name">A11y</span>
+            <span class="topic-count">17 articles</span>
+          </div>
+          <div class="topic-card reveal" role="listitem" tabindex="0">
+            <span class="topic-icon" aria-hidden="true">🚀</span>
+            <span class="topic-name">Performance</span>
+            <span class="topic-count">22 articles</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">Tech<span>.</span>Blog</a>
+          <p>A publication for frontend developers who care about craft, accessibility, and shipping things that work everywhere.</p>
+        </div>
+
+        <div>
+          <p class="footer-title">Content</p>
+          <ul class="footer-links" role="list">
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#topics">Topics</a></li>
+            <li><a href="#featured">Featured</a></li>
+            <li><a href="#">Archive</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-title">Resources</p>
+          <ul class="footer-links" role="list">
+            <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs</a></li>
+            <li><a href="https://css-tricks.com" target="_blank" rel="noopener">CSS-Tricks</a></li>
+            <li><a href="https://caniuse.com" target="_blank" rel="noopener">Can I Use</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-title">Company</p>
+          <ul class="footer-links" role="list">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Write for Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 TechBlog. Built with ❤️ and CSS Grid.</p>
+        <div class="social-links" aria-label="Social media links">
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="GitHub">⌥</a>
+          <a href="#" class="social-link" aria-label="RSS">◉</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+  <!-- ============================================
+       JAVASCRIPT  — hamburger menu + scroll reveal
+  ============================================ -->
+  <script src="script.js"></script>
+
+</body>
+</html>
