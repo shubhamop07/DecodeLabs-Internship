@@ -49,6 +49,10 @@ zephyr-coffee/
 ├── style.css      # Custom stylesheet with typography, design tokens, and layouts
 └── README.md      # Project documentation
 
+```
+
+
+
 🚀 How to Run Locally
 Follow these simple steps to view the project on your local machine:
 
